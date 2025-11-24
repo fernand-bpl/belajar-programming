@@ -20,7 +20,7 @@ void mergeArray(int arr[], int left, int mid, int right) {
     int i = 0, j = 0, k = left;
 
     while (i < n1 && j < n2) {
-        if (L[i] >= R[j]) { // ubah tanda <= menjadi >= untuk urutan terbesar ke yang terkecil
+        if (L[i] <= R[j]) { // ubah tanda <= menjadi >= untuk urutan terbesar ke yang terkecil
             arr[k] = L[i];
             i++;
         } else {

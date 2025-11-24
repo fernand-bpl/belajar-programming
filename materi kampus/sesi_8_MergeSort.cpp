@@ -1,10 +1,18 @@
 #include <iostream>
 using namespace std;
 int main () {
-    int a[] = {12, 5, 30, 7, 20, 2, 99, 43, 32, 10};
-    int n = sizeof(a) / sizeof(a[0]);
+    // input jumlah elemen
+    int n;
+    cout << "Masukan batasan: ";
+    cin >> n;
 
-    int z = 1;
+    // input data
+    int a[n]; // ubah menjadi char 
+    for (int i = 0; i < n; i++) {
+        cout << "Inputkan data indeks ke-" << i << ": ";
+        cin >> a[i];
+    }
+
     int temp[n]; /*array sementara untuk penyimpanan data
                 ubah menjadi char temp[n] untuk menjadikan input huruf
                 */
@@ -53,21 +61,13 @@ int main () {
             for (int p = left; p <= right; p++) {
                 a[p] = temp[p];
             }
-            
         }
-    // step merge sort
-    cout<<endl<<"Step ke-" << z << ": ";
-    for(int i = 0; i < n; i++) {
-    cout << a[i] << " ";
-    }
-    cout<<endl;
-    z = z + 1;
     }
 
     
     // tampilan data sesudah diurutkan
     cout << endl << "================================" << endl;
-    cout << "Data sesudah diurutkan: ";
+    cout << "Data sesudah diurutkan: " << endl;
     for (int i = 0; i < n; i++) {
         cout << a[i] << " ";
     }
