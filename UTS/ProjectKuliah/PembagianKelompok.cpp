@@ -6,7 +6,6 @@ const int MAX = 100;
 string plat[MAX], jenis[MAX];
 int jamMasuk[MAX];
 int jumlah = 0;
-int totalPendapatan = 0;
 
 void kendaraanMasuk() {
     if (jumlah >= MAX) {
@@ -15,7 +14,7 @@ void kendaraanMasuk() {
     }
 
     cout << "\n=== Kendaraan Masuk ===\n";
-    cout << "Plat Nomor : ";
+    cout << "Plat Nomor: ";
     cin.ignore();
     getline(cin, plat[jumlah]);
     cout << "Jenis (motor/mobil): ";
@@ -54,8 +53,6 @@ void kendaraanKeluar() {
             cout << "Lama parkir : " << lamaParkir << " jam\n";
             cout << "Biaya parkir: Rp" << biaya << endl;
 
-            totalPendapatan += biaya;
-
             // Hapus data (geser array)
             for (int j = i; j < jumlah - 1; j++) {
                 plat[j] = plat[j + 1];
@@ -67,28 +64,7 @@ void kendaraanKeluar() {
             return;
         }
     }
-
     cout << "Kendaraan tidak ditemukan!\n";
-}
-
-void tampilkanParkir() {
-    cout << "\n=== Daftar Kendaraan Parkir ===\n";
-
-    if (jumlah == 0) {
-        cout << "Tidak ada kendaraan.\n";
-        return;
-    }
-
-    for (int i = 0; i < jumlah; i++) {
-        cout << "Plat      : " << plat[i] << endl;
-        cout << "Jenis     : " << jenis[i] << endl;
-        cout << "Jam Masuk : " << jamMasuk[i] << endl;
-        cout << "------------------------\n";
-    }
-}
-
-void tampilPendapatan() {
-    cout << "\nTotal Pendapatan Parkir: Rp" << totalPendapatan << endl;
 }
 
 int main() {
@@ -98,22 +74,18 @@ int main() {
         cout << "\n=== SISTEM PARKIR ===\n";
         cout << "1. Kendaraan Masuk\n";
         cout << "2. Kendaraan Keluar\n";
-        cout << "3. Tampilkan Parkir\n";
-        cout << "4. Total Pendapatan\n";
-        cout << "5. Keluar\n";
+        cout << "3. Keluar\n";
         cout << "Pilih menu: ";
         cin >> pilihan;
 
         switch (pilihan) {
             case 1: kendaraanMasuk(); break;
             case 2: kendaraanKeluar(); break;
-            case 3: tampilkanParkir(); break;
-            case 4: tampilPendapatan(); break;
-            case 5: cout << "Program selesai.\n"; break;
+            case 3: cout << "Program selesai.\n"; break;
             default: cout << "Pilihan salah!\n";
         }
 
-    } while (pilihan != 5);
+    } while (pilihan != 3);
 
     return 0;
 }

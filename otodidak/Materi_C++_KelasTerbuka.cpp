@@ -382,16 +382,71 @@ int main() {
 }
 
 ====================Materi Pertemuan Ke-19====================
---------------------m--------------------
+--------------------while loop--------------------
+#include <iostream>
+using namespace std;
 
+int main () {
+    int a = 5;
+    
+    while (a <= 10) {
+        cout << "hore ";
+        cout << a << endl;
+        a += 1;
+    }
+
+    cout << "selesai" << endl;
+
+    return 0;
+} 
 
 ====================Materi Pertemuan Ke-20====================
---------------------m--------------------
+--------------------Do While Loop--------------------
+#include <iostream>
+#include <string>
+using namespace std;
 
+int main () {
+    int a = 1;
+    do {
+        cout << "Hore";
+        cout << a << "\n";
+        a++;
+    } while (a <= 10);
+
+    cout << "Done\n";
+
+    return 0;
+}
 
 ====================Materi Pertemuan Ke-21====================
---------------------m--------------------
+--------------------For Loop--------------------
+#include <iostream>
+using namespace std;
+int main() {
 
+    cout << "loop 1" << endl;
+    for(int i = 1; i <= 10; i++) {
+        cout << i << endl;
+    }
+
+    cout << "\nloop  2\n";
+    for(int i = 1; i <= 10; i += 2) {
+        cout << i << endl;
+    }
+
+    cout << "\nloop  3\n";
+    for(int i = 1; i >= -10; i--) {
+        cout << i << endl;
+    }
+
+    cout << "\nloop  4\n";
+    int total = 0;
+    for(int i = 1; i <= 10; total += i, i++) {
+        cout << i << "||" << total << endl;
+    }
+    return 0;
+}
 
 ====================Materi Pertemuan Ke-22====================
 --------------------m--------------------
